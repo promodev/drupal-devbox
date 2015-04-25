@@ -1,0 +1,10 @@
+/drush/*
+/env/dev/.vagrant/
+/env/dev/puphpet/*
+/env/live/.vagrant/
+/env/live/puphpet/*
+/www/*
+!/drush/aliases.drushrc.example.php
+!/env/dev/puphpet/config.example.yaml
+!/env/live/puphpet/config.example.yaml
+!/www/*.sh

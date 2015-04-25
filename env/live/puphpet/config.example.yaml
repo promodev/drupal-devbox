@@ -1,0 +1,108 @@
+---
+vagrantfile-digital_ocean:
+    vm:
+        box: digital_ocean
+        hostname: drupal-live
+        network:
+            private_network: 192.168.56.101
+            forwarded_port: {  }
+        provider:
+            digital_ocean:
+                image: 'Debian 7.0 x64'
+                region: §__DATA_CENTER__§
+                size: 1gb
+                token: §__TOKEN__§
+                ssh_key_name: §__KEY_NAME__§
+                backups_enabled: true
+        provision:
+            puppet:
+                manifests_path: puphpet/puppet
+                manifest_file: site.pp
+                module_path: puphpet/puppet/modules
+                options:
+                    - '--verbose'
+                    - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
+                    - '--parser future'
+        synced_folder: {  }
+    ssh:
+        host: null
+        port: null
+        private_key_path: ~/.ssh/id_rsa
+        username: vagrant
+        guest_port: null
+        keep_alive: true
+        forward_agent: false
+        forward_x11: false
+        shell: 'bash -l'
+    vagrant:
+        host: detect
+server:
+    install: '1'
+    packages: {  }
+firewall:
+    install: '1'
+    rules: null
+nginx:
+    install: '1'
+    settings:
+        default_vhost: 1
+        proxy_buffer_size: 128k
+        proxy_buffers: '4 256k'
+    vhosts:
+        f9H3zEKstMSY:
+            server_name: d7.§__DOMAIN__§
+            www_root: /srv/www/d7
+            listen_port: '80'
+            location: \.php$
+            index_files:
+                - index.php
+            engine: php
+            ssl_cert: ''
+            ssl_key: ''
+php:
+    install: '1'
+    version: '56'
+    composer: '1'
+    composer_home: ''
+    modules:
+        php:
+            - cli
+            - gd
+            - intl
+            - mcrypt
+        pear: {  }
+        pecl:
+            - pecl_http
+    ini:
+        session.save_path: /var/lib/php/session
+        mbstring.http_input: pass
+        mbstring.http_output: pass
+    timezone: Europe/Moscow
+    mod_php: 0
+drush:
+    install: '1'
+    version: 6.3.0
+ruby:
+    install: '1'
+    versions:
+        QUjC4rkueKhF:
+            version: ''
+python:
+    install: '1'
+    packages: {  }
+    versions:
+        NY787ZtviL9t:
+            version: ''
+mysql:
+    install: '1'
+    root_password: §__PASSWORD__§
+    adminer: 0
+    databases:
+        6fEW2J0wzUTl:
+            grant:
+                - ALL
+            name: d7
+            host: localhost
+            user: d7
+            password: §__PASSWORD__§
+            sql_file: ''
