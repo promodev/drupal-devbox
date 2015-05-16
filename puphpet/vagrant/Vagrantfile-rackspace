@@ -3,6 +3,7 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'rackspace'
 require 'fog/version'
 
 Vagrant.configure('2') do |config|
+  config.vm.define "#{env}"
   config.vm.box         = 'dummy'
   config.vm.hostname    = "#{data['vm']['hostname']}"
   config.nfs.functional = false
