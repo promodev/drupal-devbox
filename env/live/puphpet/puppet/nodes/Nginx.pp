@@ -14,7 +14,7 @@ if hash_key_equals($nginx_values, 'install', 1) {
   class { 'puphpet::ssl_cert': }
 
   $www_location  = $puphpet::params::nginx_www_location
-  $webroot_user  = 'www-data'
+  $webroot_user  = 'vagrant'
   $webroot_group = 'www-data'
 
   if ! defined(File[$www_location]) {
