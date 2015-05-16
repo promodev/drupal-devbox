@@ -1,8 +1,7 @@
+*~
+/.vagrant
 /drush/aliases.drushrc.php
-/env/dev/.vagrant/
-/env/dev/puphpet/*
-!/env/dev/puphpet/config.example.yaml
-/env/live/.vagrant/
-/env/live/puphpet/config.yaml
+/config.dev.yaml
+/config.live.yaml
 /www/*
 !/www/*.sh
