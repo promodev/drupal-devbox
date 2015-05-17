@@ -156,6 +156,7 @@ php:
     modules:
         php:
             - cli
+            - gd
             - intl
             - mcrypt
         pear: {  }
