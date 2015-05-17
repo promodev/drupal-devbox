@@ -1,5 +1,4 @@
-if $yaml_values == undef { $yaml_values = merge_yaml('/vagrant/puphpet/config.yaml', '/vagrant/puphpet/config-custom.yaml') }
-if $nginx_values == undef { $nginx_values = $yaml_values['nginx'] }
+if $nginx_values == undef { $nginx_values = hiera_hash('nginx', false) }
 if $php_values == undef { $php_values = hiera_hash('php', false) }
 if $hhvm_values == undef { $hhvm_values = hiera_hash('hhvm', false) }
 

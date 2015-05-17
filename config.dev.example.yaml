@@ -25,6 +25,7 @@ vagrantfile:
                 manifest_file: site.pp
                 module_path: puphpet/puppet/modules
                 options:
+                    - '--environment dev'
                     - '--verbose'
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
