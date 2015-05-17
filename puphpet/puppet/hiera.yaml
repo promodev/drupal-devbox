@@ -1,9 +1,9 @@
 ---
 :backends: yaml
 :yaml:
-    :datadir: '/vagrant'
+    :datadir: '/vagrant/puphpet'
 :hierarchy:
-    - 'config-custom.%{::environment}'
-    - 'config.%{::environment}'
+    - '%{::environment}.custom'
+    - '%{::environment}'
 :merge_behavior: deeper
 :logger: console

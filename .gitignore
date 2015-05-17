@@ -1,8 +1,8 @@
 *~
 /.vagrant
 /drush/aliases.drushrc.php
-/config.dev.yaml
-/config.live.yaml
+/puphpet/dev.yaml
+/puphpet/live.yaml
 /puphpet/files/dot/ssh/*
 !/puphpet/files/dot/ssh/insecure_private_key
 /www/*

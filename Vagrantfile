@@ -8,10 +8,10 @@ end
 require 'yaml'
 require "#{dir}/puphpet/ruby/deep_merge.rb"
 
-configValues = YAML.load_file("#{dir}/config.#{env}.yaml")
+configValues = YAML.load_file("#{dir}/puphpet/#{env}.yaml")
 
-if File.file?("#{dir}/config-custom.#{env}.yaml")
-  custom = YAML.load_file("#{dir}/config-custom.#{env}.yaml")
+if File.file?("#{dir}/puphpet/#{env}.custom.yaml")
+  custom = YAML.load_file("#{dir}/puphpet/#{env}.custom.yaml")
   configValues.deep_merge!(custom)
 end
 
