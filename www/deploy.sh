@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-sudo ./fix-chmod.sh $1
 drush @$1-dev vset --exact maintenance_mode 1
 drush @$1-dev cc all
 drush @$1-live vset --exact maintenance_mode 1

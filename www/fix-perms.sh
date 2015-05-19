@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+chown -R vagrant:www-data /srv/www/$1
 chmod -R ug-s /srv/www/$1
 find /srv/www/$1 -type d -exec chmod 2755 {} +
 find /srv/www/$1 -type f -exec chmod 644 {} +
