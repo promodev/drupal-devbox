@@ -2,7 +2,7 @@ vagrantfile:
     target: digitalocean
     vm:
         box: digital_ocean
-        hostname: drupal
+        hostname: drupal-live
         network:
             private_network: 192.168.56.101
             forwarded_port: {  }
