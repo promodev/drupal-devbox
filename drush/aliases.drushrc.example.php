@@ -14,6 +14,7 @@ if (!function_exists('_drush_generate_alias')) {
         'uri' => $key . '.' . LIVE_DOMAIN,
         'root' => '/srv/www/' . $key,
         'remote-host' => LIVE_HOST,
+        'ssh-options' => '-p PORT',
       ],
     ];
   }
