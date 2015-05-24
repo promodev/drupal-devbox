@@ -27,7 +27,7 @@ vagrantfile:
         synced_folder: {  }
     ssh:
         host: null
-        port: null
+        port: __PORT__
         private_key_path: ~/.ssh/id_rsa
         username: vagrant
         guest_port: null
@@ -46,7 +46,13 @@ users_groups:
     users: {  }
 firewall:
     install: '1'
-    rules: {  }
+    rules:
+        ssh:
+            port:
+                - __PORT__
+            priority: '100'
+            proto: tcp
+            action: accept
 cron:
     install: '1'
     jobs: {  }
